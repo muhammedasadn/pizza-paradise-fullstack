@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* In v4, we can define theme variables here or in JS. 
+   Since we have JS config, we'll see if it picks it up. 
+   If not, we might need to migrate theme to CSS variables here.
+   For now, I'll define the critical theme/colors here to be safe and ensure it works immediately.
+*/
+
+@theme {
+  --color-pizza-red: #C62828;
+  --color-pizza-orange: #FF5722;
+  --color-pizza-cream: #FFF3E0;
+  --color-pizza-charcoal: #1A1A1A;
+  --color-pizza-green: #2E7D32;
+  --color-pizza-dark: #121212;
+
+  --font-sans: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-pizza-cream text-pizza-charcoal font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C62828;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B71C1C;
+}
